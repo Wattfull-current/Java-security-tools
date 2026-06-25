@@ -15,6 +15,7 @@ public class filecipher {
     System.out.println("Enter file name:");
     int key = 42; // you can use your own key too
     String filename = in.next();
+    String r2="";
     in.nextLine();
      try {
 /* 
@@ -28,7 +29,7 @@ public class filecipher {
          //DataOutputStream dw = new DataOutputStream(fw);
          System.out.println("Enter the input in file");
          String inp = in.nextLine();
-         
+         r2=inp;
          //dw.writeUTF(inp);
          //dw.close();
          byte[] inpby = inp.getBytes();
@@ -38,7 +39,10 @@ public class filecipher {
             fw.write(encryptedBytes);
          }
          fw.close();
-         System.out.println("File encrypted and saved");
+         System.out.println();
+         System.out.println("\n========================================");
+         System.out.println("File encrypted and saved successfully.");
+         System.out.println("========================================\n");
      } catch (IOException e) {
          System.err.println(e);// TODO: handle exception
      }
@@ -53,24 +57,31 @@ public class filecipher {
  * when we are decrypting the things. However if you do not want to decrypt and want to know how the file operation work you can use it.
  * But with care.
  */
+      System.out.println();
+      System.out.println("Original input   : " + r2);
+      StringBuilder r1 = new StringBuilder();
      try {
         FileInputStream fin = new FileInputStream(filename);
         //DataInputStream din = new DataInputStream(fin);
         StringBuilder result = new StringBuilder();
         int byteread;
         //boolean EOF = true;
-    
+         
         while((byteread = fin.read())!= -1)
         {
             int decryptedBytes = byteread^key;
             result.append((char) decryptedBytes);
         }
         fin.close();
-        System.out.println("Decrypted content: "+ result.toString());
+        r1= result;
+        System.out.println("Decrypted content : " + result.toString());
+        
     } 
+    
     catch (IOException E1) {
         System.err.println(E1);
     }
+    System.out.println("Match status      : " + (r2.equals(r1.toString()) ? "SUCCESS - matches original" : "MISMATCH - error"));
         /*while(EOF)
         {
             try {
