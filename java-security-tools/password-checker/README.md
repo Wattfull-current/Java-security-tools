@@ -41,18 +41,25 @@ javac passwordmanager.java
 java passwordmanager
 ```
 ## Example output
+Output-1
 
->>Output-1
 Welcome to password manager
+
  A strong password is a said when:
+ 
     #-It must be at least 8 characters long and should not exceed 15 characters
     #-Must contain a Lowercase letter
     #-Must contain a Uppercase letter
     #-Must contain a Numeric digit
     #-Must contain a Special character (&,$,#,@)
     #-Not in a small list of common/leaked passwords 
+    
 Enter the password
+
 Hx7!mK9$
+
 Password strength: Strong
+
 Poolsize =94
+
 Entropy =41.89153570263959
