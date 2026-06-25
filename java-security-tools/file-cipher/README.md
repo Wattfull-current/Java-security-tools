@@ -30,11 +30,18 @@ java filecipher
 
 ## Sample output
 Enter file name:
-yy.txt
+name.txt
 Enter the input in file
-hello
-File encrypted and saved
-Decrypted content hello
+Naman
 
+
+========================================
+File encrypted and saved successfully.
+========================================
+
+
+Original input   : Naman
+Decrypted content : Naman
+Match status      : SUCCESS - matches original
 >> Note: The program also contains some segments of file operations used however they are not in the active program
 >> Warning : Do not try to play with them they are just for the understanding the concepts used in java 
